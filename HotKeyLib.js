@@ -1,8 +1,7 @@
-HTK = {}
 var HTK ={}
+var HTKlog= [];
 HTK = function (hothey, event) {
 		HTK.hothey = hothey;
-		HTK.log = {};
 		HTK.event = event;
 		HTK.type = 0;
 		HTK.interpritator();
@@ -51,12 +50,20 @@ HTK.Regisseur = function (event) {
 			});
 			return $return === HTK.scenario.length;
 		}
-		HTK.log.push(event.key.toLowerCase());
-		if (HTK.log.length === HTK.scenario.length) {
-			for (let i = 0; i < HTK.log.length && i < HTK.scenario.length; i++) {
-				const log = HTK.log[i];
+		HTKlog.push(event.key.toLowerCase());
+		if (HTKlog.length === HTK.scenario.length) {
+			for (let i = 0; i < HTKlog.length && i < HTK.scenario.length; i++) {
+				const log = HTKlog[i];
 				const scenario = HTK.scenario[i];
-				// if(scenario[i])
+				if(scenario[i][1] != HTKlog[i]){
+					HTKlog = []
+					return false
+				}else{
+					$return++
+				}
 			}
+			return $return;
+		}else if(HTKlog.length > HTK.scenario.length){
+			HTKlog = []
 		}
 	}
