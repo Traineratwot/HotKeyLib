@@ -1,0 +1,22 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="HotKeyLib.js"></script>
+<input type="search" name="" id="r1">
+<input type="search" name="" id="r2">
+<input type="search" name="" id="r3">
+<script>
+	$('#r1')[0].addEventListener("keydown", event => {
+		if ((HTK('ctrl+space', event))) {
+			console.log(111)
+		}
+	});
+	$('#r2')[0].addEventListener("keydown", event => {
+		if ((HTK('alt+j', event))) {
+			console.log(222)
+		}
+	});
+	$('#r3')[0].addEventListener("keydown", event => {
+		if ((HTK('shift+space', event))) {
+			console.log(333)
+		}
+	});
+</script>
