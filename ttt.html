@@ -1,22 +1,12 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="HotKeyLib.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
+<script src="HotKeyLib_v0.1.js"></script>
+<!-- <script src="images.js"></script> -->
+<!-- <script src="aidb.js"></script> -->
 <input type="search" name="" id="r1">
 <input type="search" name="" id="r2">
 <input type="search" name="" id="r3">
-<script>
-	$('#r1')[0].addEventListener("keydown", event => {
-		if ((HTK('ctrl+space', event))) {
-			console.log(111)
-		}
-	});
-	$('#r2')[0].addEventListener("keydown", event => {
-		if ((HTK('alt+j', event))) {
-			console.log(222)
-		}
-	});
-	$('#r3')[0].addEventListener("keydown", event => {
-		if ((HTK('space+k', event))) {
-			console.log(333)
-		}
-	});
+<script> 
+var unit1 = new HTK('CTrL+T',function () { console.log(11111) })
+// var unit2 = new images();
 </script>
